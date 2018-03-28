@@ -23,16 +23,16 @@ public class ConnectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connection);
 
-        final EditText editTextCompte = findViewById(R.id.editText_compte_connection);
+        final EditText editTextProfil = findViewById(R.id.editText_profil_connection);
         final EditText editTextPassword = findViewById(R.id.editText_password_connection);
         final ImageView imageViewPassword = findViewById(R.id.imageView_password_connection);
         final TextView textViewForgottenPassword = findViewById(R.id.textView_forgotten_password);
-        final Button buttonConnection = findViewById(R.id.button);
-        final CheckBox checkBoxConnection = findViewById(R.id.checkBox_connection);
+        final Button buttonToLogIn = findViewById(R.id.button_log_in);
+        final CheckBox checkBoxToLogIn = findViewById(R.id.checkBox_connection);
 
-        final SharedPreferences sharedPrefCompte = this.getPreferences(Context.MODE_PRIVATE);
-        String usernameCache = sharedPrefCompte.getString("username", "");
-        editTextCompte.setText(usernameCache);
+        final SharedPreferences sharedPrefProfil = this.getPreferences(Context.MODE_PRIVATE);
+        String usernameCache = sharedPrefProfil.getString("username", "");
+        editTextProfil.setText(usernameCache);
 
         final SharedPreferences sharedPreferencesPassword = this.getPreferences(Context.MODE_PRIVATE);
         String passwordCache = sharedPreferencesPassword.getString("password", "");
@@ -62,14 +62,14 @@ public class ConnectionActivity extends AppCompatActivity {
             }
         });
 
-        buttonConnection.setOnClickListener(new View.OnClickListener() {
+        buttonToLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String editCompte = editTextCompte.getText().toString();
+                String editProfil = editTextProfil.getText().toString();
                 String editPassword = editTextPassword.getText().toString();
 
-                if (editCompte.isEmpty() || editPassword.isEmpty()) {
+                if (editProfil.isEmpty() || editPassword.isEmpty()) {
                     Toast.makeText(ConnectionActivity.this, "Remplissez tous les champs", Toast.LENGTH_SHORT).show();
                 }
 
@@ -78,12 +78,12 @@ public class ConnectionActivity extends AppCompatActivity {
                     ConnectionActivity.this.startActivity(intentMap);
                 }
 
-                if (checkBoxConnection.isChecked()) {
-                    SharedPreferences.Editor editorCompte = sharedPrefCompte.edit();
-                    editorCompte.putString("username", editCompte);
-                    editorCompte.commit();
+                if (checkBoxToLogIn.isChecked()) {
+                    SharedPreferences.Editor editorProfil = sharedPrefProfil.edit();
+                    editorProfil.putString("username", editProfil);
+                    editorProfil.commit();
 
-                    SharedPreferences.Editor editorPassword = sharedPrefCompte.edit();
+                    SharedPreferences.Editor editorPassword = sharedPrefProfil.edit();
                     editorPassword.putString("password", editPassword);
                     editorPassword.commit();
                 }

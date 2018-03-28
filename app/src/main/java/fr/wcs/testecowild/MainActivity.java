@@ -13,21 +13,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button buttonConnect = findViewById(R.id.button_connect);
-        buttonConnect.setOnClickListener(new View.OnClickListener() {
+        final Button buttonToLogIn = findViewById(R.id.button_to_log_in);
+        buttonToLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentConnect = new Intent(MainActivity.this, ConnectionActivity.class);
-                startActivity(intentConnect);
+                Intent intentToLogIn = new Intent(MainActivity.this, ConnectionActivity.class);
+                startActivity(intentToLogIn);
             }
         });
 
-        final Button buttonMember = findViewById(R.id.button_member);
-        buttonMember.setOnClickListener(new View.OnClickListener() {
+        final Button buttonBecomeMember = findViewById(R.id.button_become_member);
+        buttonBecomeMember.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentMember = new Intent(MainActivity.this, MemberActivity.class);
-                MainActivity.this.startActivity(intentMember);
+                Intent intentBecomeMember = new Intent(MainActivity.this, MemberActivity.class);
+                MainActivity.this.startActivity(intentBecomeMember);
             }
         });
     }

@@ -17,9 +17,9 @@ public class ForgottenPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgotten_password);
 
         final EditText editTextForgottenPassword = findViewById(R.id.editText_forgotten_password);
-        final EditText editTextForgottenPassword2 = findViewById(R.id.editText_forgotten_password2);
+        final EditText editTextValidatedPassword = findViewById(R.id.editText_validated_password);
         final ImageView imageViewForgottenPassword = findViewById(R.id.imageView_forgotten_password);
-        final ImageView imageViewForgottenPassword2 = findViewById(R.id.imageView_forgotten_password2);
+        final ImageView imageViewValidatedPassword = findViewById(R.id.imageView_validated_password);
 
         setTitle("Modifier mot de passe");
 
@@ -39,17 +39,17 @@ public class ForgottenPasswordActivity extends AppCompatActivity {
             }
         });
 
-        imageViewForgottenPassword2.setOnClickListener(new View.OnClickListener() {
+        imageViewValidatedPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 if (i == 1) {
-                    editTextForgottenPassword2.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    editTextValidatedPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
                     i = 2;
                 }
 
                 else {
-                    editTextForgottenPassword2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    editTextValidatedPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                     i = 1;
                 }
             }

@@ -25,7 +25,7 @@ public class MemberActivity extends AppCompatActivity {
         final ImageView imageViewPassword = findViewById(R.id.imageView_password);
         final ImageView imageViewPassword2 = findViewById(R.id.imageView_password2);
 
-        Button buttonMember = findViewById(R.id.button_member);
+        Button buttonMember = findViewById(R.id.button_become_member);
         buttonMember.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
